@@ -25,6 +25,10 @@ class TempleFlashcardsViewController : UIViewController {
         static let TempleTableCellIdentifier = "TempleCell"
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
 
 extension TempleFlashcardsViewController : UICollectionViewDataSource {
