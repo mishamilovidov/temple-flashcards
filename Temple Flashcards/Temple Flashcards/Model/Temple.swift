@@ -13,10 +13,17 @@ class Temple {
     
     // MARK: - Properties
     
-    var name : String
-    var photo: UIImage
+//    var name : String
+//    var photo: UIImage
+    
+    var name = "Aba Nigeria"
+    var photo = #imageLiteral(resourceName: "aba_nigeria_temple_lds")
     
     // MARK: - Initialization
+    
+    init() {
+        // By default this builds a Temple Card
+    }
     
     init(name: String, photo: UIImage) {
         self.name = name
