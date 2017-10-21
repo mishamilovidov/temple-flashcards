@@ -13,6 +13,8 @@ extension TempleFlashcardsViewController : UITableViewDelegate {
         
         let temple = TempleList.sharedInstance.templeList[indexPath.row].name
         tableCellTempleSelected = temple
+        cellSelected = true
+        cellSelectedIndex = indexPath
         
         let correctAlert = UIAlertController(
             title: "Correct!",
@@ -25,16 +27,15 @@ extension TempleFlashcardsViewController : UITableViewDelegate {
         let correctAction = UIAlertAction(
             title: "Continue",
             style: .default,
-            handler: {action in self.removeTempleFromTable(
+            handler: {action in self.removeTemple(
+                        collection: self.templeCollectionView,
                         table: self.templeTableView,
-                        temple: TempleList.sharedInstance.templeList[indexPath.row],
-                        indexPath: indexPath)})
+                        templeListIndex: self.cellSelectedIndex!,
+                        randomOrderTempleListIndex: self.cardSelectedIndex!)})
         let defaultAction = UIAlertAction(
             title: "Continue",
             style: .default,
             handler: nil)
-        
-        cellSelected = true
         
         if (cardSelected == true && cellSelected == true) {
             
@@ -46,10 +47,7 @@ extension TempleFlashcardsViewController : UITableViewDelegate {
                 present(incorrectAlert, animated: true, completion: nil)
             }
             
-            cardCellTempleSelected = ""
-            cardCellTempleSelected = ""
-            cardSelected = false
-            cellSelected = false
+            resetDefaults()
         }
     }
 }

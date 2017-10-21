@@ -33,9 +33,12 @@ class TempleFlashcardsViewController : UIViewController {
     var tableCellTempleSelected : String?
     var cardSelected : Bool?
     var cellSelected : Bool?
+    var cardSelectedIndex : IndexPath?
+    var cellSelectedIndex : IndexPath?
     
     // MARK: - Outlets
     
+    @IBOutlet weak var templeCollectionView: UICollectionView!
     @IBOutlet weak var templeTableView: UITableView!
     
     // MARK: - View controller life cycle
@@ -43,18 +46,36 @@ class TempleFlashcardsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setDefaults()
+    }
+    
+    // MARK: - Helpers
+    
+    private func setDefaults() {
+        cardCellTempleSelected  = ""
+        tableCellTempleSelected = ""
+        cardSelected            = false
+        cellSelected            = false
+        cardSelectedIndex       = nil
+        cellSelectedIndex       = nil
+    }
+    
+    func resetDefaults() {
         cardCellTempleSelected  = ""
         tableCellTempleSelected = ""
         cardSelected            = false
         cellSelected            = false
     }
     
-    // MARK: - Helpers
-    
-    func removeTempleFromTable(table: UITableView, temple: Temple, indexPath: IndexPath) {
+    func removeTemple(collection: UICollectionView, table: UITableView, templeListIndex: IndexPath, randomOrderTempleListIndex: IndexPath) {
+        
+        let templeListRow               = templeListIndex.row
+        let randomOrderTempleListRow    = randomOrderTempleListIndex.row
+        
         table.beginUpdates()
-        table.deleteRows(at: [indexPath], with: .automatic)
-        // Also delete the chosen row from your model
+        TempleList.sharedInstance.removeTemple(templeListIndex: templeListRow, randomOrderTempleListIndex: randomOrderTempleListRow)
+        collection.deleteItems(at: [randomOrderTempleListIndex])
+        table.deleteRows(at: [templeListIndex], with: .automatic)
         table.endUpdates()
     }
 }

@@ -79,4 +79,12 @@ class TempleList {
             randomOrderTempleList.append(temple)
         }
     }
+    
+    // MARK: - Public Helpers
+    
+    public func removeTemple(templeListIndex: Int, randomOrderTempleListIndex: Int) {
+        templeList.remove(at: templeListIndex)
+        randomOrderTempleList.remove(at: randomOrderTempleListIndex)
+    }
+    
 }
