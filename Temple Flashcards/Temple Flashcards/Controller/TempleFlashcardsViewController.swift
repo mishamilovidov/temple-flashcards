@@ -34,6 +34,10 @@ class TempleFlashcardsViewController : UIViewController {
     var cardSelected : Bool?
     var cellSelected : Bool?
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var templeTableView: UITableView!
+    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -43,5 +47,14 @@ class TempleFlashcardsViewController : UIViewController {
         tableCellTempleSelected = ""
         cardSelected            = false
         cellSelected            = false
+    }
+    
+    // MARK: - Helpers
+    
+    func removeTempleFromTable(table: UITableView, temple: Temple, indexPath: IndexPath) {
+        table.beginUpdates()
+        table.deleteRows(at: [indexPath], with: .automatic)
+        // Also delete the chosen row from your model
+        table.endUpdates()
     }
 }

@@ -22,6 +22,13 @@ extension TempleFlashcardsViewController : UITableViewDelegate {
             title: "Not Quite!",
             message: "That's not the \(temple) Temple; that's a photo of the " + cardCellTempleSelected! + " Temple",
             preferredStyle: .alert)
+        let correctAction = UIAlertAction(
+            title: "Continue",
+            style: .default,
+            handler: {action in self.removeTempleFromTable(
+                        table: self.templeTableView,
+                        temple: TempleList.sharedInstance.templeList[indexPath.row],
+                        indexPath: indexPath)})
         let defaultAction = UIAlertAction(
             title: "Continue",
             style: .default,
@@ -32,7 +39,7 @@ extension TempleFlashcardsViewController : UITableViewDelegate {
         if (cardSelected == true && cellSelected == true) {
             
             if (temple == cardCellTempleSelected) {
-                correctAlert.addAction(defaultAction)
+                correctAlert.addAction(correctAction)
                 present(correctAlert, animated: true, completion: nil)
             } else {
                 incorrectAlert.addAction(defaultAction)
