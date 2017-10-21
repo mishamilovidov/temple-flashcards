@@ -13,11 +13,8 @@ class Temple {
     
     // MARK: - Properties
     
-//    var name : String
-//    var photo: UIImage
-    
     var name = "Aba Nigeria"
-    var photo = #imageLiteral(resourceName: "aba_nigeria_temple_lds")
+    var photo : UIImage?
     
     // MARK: - Initialization
     

@@ -12,8 +12,9 @@ class TempleList {
     
     // MARK: - Properties
     var templeList: [Temple] = []
+    var randomOrderTempleList: [Temple] = []
     
-    let temples : [Temple] = [
+    var temples : [Temple] = [
         Temple(name: "Aba Nigeria",
                photo: #imageLiteral(resourceName: "aba_nigeria_temple_lds")),
         Temple(name: "Accra Ghana",
@@ -37,7 +38,7 @@ class TempleList {
         Temple(name: "Billings Montana",
                photo: #imageLiteral(resourceName: "billings_temple_lds")),
         Temple(name: "Birmingham Alabama",
-               photo: #imageLiteral(resourceName: "brigham_city_utah_temple_dawn")),
+               photo: #imageLiteral(resourceName: "birmingham_alabama_temple_lds")),
         Temple(name: "Bismarck North Dakota",
                photo: #imageLiteral(resourceName: "bismark_north_dakota_temple")),
         Temple(name: "Bogotá Colombia",
@@ -72,5 +73,10 @@ class TempleList {
             templeList.append(temple)
         }
         
+        temples.shuffle()
+        
+        for temple in temples {
+            randomOrderTempleList.append(temple)
+        }
     }
 }

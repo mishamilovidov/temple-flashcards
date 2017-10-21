@@ -50,7 +50,7 @@ class TempleCardView : UIView {
     }
     
     private func drawTempleCard() {
-        templeCard.photo.scaled(to: bounds.size, scalingMode: .aspectFill).draw(in: bounds)
+        templeCard.photo?.scaled(to: bounds.size, scalingMode: .aspectFill).draw(in: bounds)
     }
     
 }
