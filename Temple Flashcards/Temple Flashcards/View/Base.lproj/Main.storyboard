@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XHV-dA-hPY">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Temple Flashcards-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TempleFlashcardsViewController" customModule="Temple_Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JJd-n3-4z2">
+                                <rect key="frame" x="0.0" y="32" width="425" height="343"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="Jv1-eR-brk"/>
+                                    <constraint firstAttribute="width" constant="425" id="PM4-Rv-yL7"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fvl-SA-AAA">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TempleCardCell" id="G5P-6Q-z3Q" customClass="TempleCardCell" customModule="Temple_Flashcards">
+                                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OY8-jv-FGO" customClass="TempleCardView" customModule="Temple_Flashcards" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="OY8-jv-FGO" firstAttribute="leading" secondItem="G5P-6Q-z3Q" secondAttribute="leading" id="jN7-Uv-cmW"/>
+                                            <constraint firstAttribute="trailing" secondItem="OY8-jv-FGO" secondAttribute="trailing" id="vc9-vW-HWK"/>
+                                            <constraint firstItem="OY8-jv-FGO" firstAttribute="top" secondItem="G5P-6Q-z3Q" secondAttribute="top" id="vsZ-Ag-gol"/>
+                                            <constraint firstAttribute="bottom" secondItem="OY8-jv-FGO" secondAttribute="bottom" id="zFj-Lg-O20"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="templeCardView" destination="OY8-jv-FGO" id="QjE-ih-0w0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ieG-Zy-Hma"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UXa-Kh-0gd"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGL-V6-ptw">
+                                <rect key="frame" x="425" y="32" width="242" height="343"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-5B-qq2">
+                                        <rect key="frame" x="0.0" y="0.0" width="242" height="311"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="311" id="kob-b5-wqC"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TempleCell" textLabel="qZR-25-hIy" rowHeight="44" style="IBUITableViewCellStyleDefault" id="cth-VZ-qDf" customClass="TempleTableViewCell" customModule="Temple_Flashcards">
+                                                <rect key="frame" x="0.0" y="28" width="242" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cth-VZ-qDf" id="GUN-BS-SRB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="242" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qZR-25-hIy">
+                                                            <rect key="frame" x="15" y="0.0" width="212" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="templeNameLabel" destination="qZR-25-hIy" id="NmR-9q-miO"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="ExG-em-F83"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="LRr-Pq-qwy"/>
+                                        </connections>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saQ-AH-9bq">
+                                        <rect key="frame" x="0.0" y="311" width="242" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw4-V5-nLm">
+                                                <rect key="frame" x="25" y="6" width="63" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Incorrect:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APc-r6-aLs">
+                                                <rect key="frame" x="125" y="6" width="74" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVG-Fr-QdT">
+                                                <rect key="frame" x="96" y="6" width="11" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWH-My-nkQ">
+                                                <rect key="frame" x="207" y="6" width="11" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="saQ-AH-9bq" secondAttribute="trailing" id="B1o-Wl-x4n"/>
+                                    <constraint firstItem="saQ-AH-9bq" firstAttribute="leading" secondItem="YGL-V6-ptw" secondAttribute="leading" id="LgR-oX-Olj"/>
+                                    <constraint firstItem="lBG-5B-qq2" firstAttribute="leading" secondItem="YGL-V6-ptw" secondAttribute="leading" id="ccB-mK-huk"/>
+                                    <constraint firstAttribute="bottom" secondItem="saQ-AH-9bq" secondAttribute="bottom" id="m2U-ru-SDv"/>
+                                    <constraint firstItem="saQ-AH-9bq" firstAttribute="top" secondItem="lBG-5B-qq2" secondAttribute="bottom" id="rpu-Tp-CWW"/>
+                                    <constraint firstAttribute="trailing" secondItem="lBG-5B-qq2" secondAttribute="trailing" id="sev-7n-Scm"/>
+                                    <constraint firstItem="lBG-5B-qq2" firstAttribute="top" secondItem="YGL-V6-ptw" secondAttribute="top" id="yOn-MF-5gu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YGL-V6-ptw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HrK-5o-KEN"/>
+                            <constraint firstItem="JJd-n3-4z2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WkI-3v-d9a"/>
+                            <constraint firstItem="YGL-V6-ptw" firstAttribute="leading" secondItem="JJd-n3-4z2" secondAttribute="trailing" id="aSH-F3-mwb"/>
+                            <constraint firstItem="YGL-V6-ptw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="adk-vv-HEd"/>
+                            <constraint firstItem="JJd-n3-4z2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d5n-xc-BZo"/>
+                            <constraint firstItem="YGL-V6-ptw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mmD-16-Oew"/>
+                            <constraint firstItem="JJd-n3-4z2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sU6-MA-CZ3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Temple Flashcards" id="Hb4-gI-hOl">
+                        <barButtonItem key="rightBarButtonItem" title="Study Mode" id="HP2-Ig-5QI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="correctCount" destination="IVG-Fr-QdT" id="zTc-l8-zgm"/>
+                        <outlet property="incorrectCount" destination="OWH-My-nkQ" id="qKT-Fc-Xft"/>
+                        <outlet property="templeCollectionView" destination="JJd-n3-4z2" id="JGS-JR-OGX"/>
+                        <outlet property="templeTableView" destination="lBG-5B-qq2" id="ioQ-G9-4o2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="346.77661169415296" y="151.19999999999999"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lNJ-hl-tZT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XHV-dA-hPY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H6Z-VK-ged">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.91780865190000005" green="0.79633694889999995" blue="0.82042378189999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
+                            <color key="value" red="0.23640552163124084" green="0.30297151207923889" blue="0.44406044483184814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kmU-U9-hQS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ob5-jF-2cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="153"/>
+        </scene>
+    </scenes>
+</document>
