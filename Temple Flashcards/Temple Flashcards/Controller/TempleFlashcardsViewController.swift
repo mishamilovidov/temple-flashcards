@@ -40,6 +40,8 @@ class TempleFlashcardsViewController : UIViewController {
     
     @IBOutlet weak var templeCollectionView: UICollectionView!
     @IBOutlet weak var templeTableView: UITableView!
+    @IBOutlet weak var correctCount: UILabel!
+    @IBOutlet weak var incorrectCount: UILabel!
     
     // MARK: - View controller life cycle
     
@@ -47,6 +49,7 @@ class TempleFlashcardsViewController : UIViewController {
         super.viewDidLoad()
         
         setDefaults()
+        updateTallies()
     }
     
     // MARK: - Helpers
@@ -65,6 +68,11 @@ class TempleFlashcardsViewController : UIViewController {
         tableCellTempleSelected = ""
         cardSelected            = false
         cellSelected            = false
+    }
+    
+    func updateTallies() {
+        correctCount.text = "\(Scoreboard.sharedInstance.correct)"
+        incorrectCount.text = "\(Scoreboard.sharedInstance.incorrect)"
     }
     
     func removeTemple(collection: UICollectionView, table: UITableView, templeListIndex: IndexPath, randomOrderTempleListIndex: IndexPath) {

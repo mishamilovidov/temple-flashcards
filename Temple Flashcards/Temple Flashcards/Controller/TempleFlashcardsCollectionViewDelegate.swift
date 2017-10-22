@@ -37,13 +37,16 @@ extension TempleFlashcardsViewController : UICollectionViewDelegate {
         if (cardSelected == true && cellSelected == true) {
             
             if (temple == tableCellTempleSelected) {
+                Scoreboard.sharedInstance.addCorrect()
                 correctAlert.addAction(defaultAction)
                 present(correctAlert, animated: true, completion: nil)
             } else {
+                Scoreboard.sharedInstance.addIncorrect()
                 incorrectAlert.addAction(defaultAction)
                 present(incorrectAlert, animated: true, completion: nil)
             }
             
+            updateTallies()
             resetDefaults()
         }
     }

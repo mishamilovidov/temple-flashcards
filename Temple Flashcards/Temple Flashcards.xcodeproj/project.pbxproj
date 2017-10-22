@@ -17,6 +17,7 @@
 		C667FF8C1F97E83C0044C9D5 /* TempleCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667FF8B1F97E83C0044C9D5 /* TempleCardViewController.swift */; };
 		C667FF8E1F97E9600044C9D5 /* TempleCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667FF8D1F97E9600044C9D5 /* TempleCardCell.swift */; };
 		C667FF901F97F6140044C9D5 /* UIImage+scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667FF8F1F97F6140044C9D5 /* UIImage+scaling.swift */; };
+		C67A565E1F9D57A000597871 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A565D1F9D57A000597871 /* Scoreboard.swift */; };
 		C6C158251F93F12E0073A0C0 /* Temple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C158241F93F12E0073A0C0 /* Temple.swift */; };
 		C6D3FB331F96F5C40066A822 /* UIColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FB321F96F5C40066A822 /* UIColor+rgb.swift */; };
 		C6D3FB351F96F92F0066A822 /* TempleFlashcardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FB341F96F92F0066A822 /* TempleFlashcardsViewController.swift */; };
@@ -37,6 +38,7 @@
 		C667FF8B1F97E83C0044C9D5 /* TempleCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleCardViewController.swift; sourceTree = "<group>"; };
 		C667FF8D1F97E9600044C9D5 /* TempleCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleCardCell.swift; sourceTree = "<group>"; };
 		C667FF8F1F97F6140044C9D5 /* UIImage+scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+scaling.swift"; sourceTree = "<group>"; };
+		C67A565D1F9D57A000597871 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 		C6C158241F93F12E0073A0C0 /* Temple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temple.swift; sourceTree = "<group>"; };
 		C6D3FB321F96F5C40066A822 /* UIColor+rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgb.swift"; sourceTree = "<group>"; };
 		C6D3FB341F96F92F0066A822 /* TempleFlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleFlashcardsViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				C6C158241F93F12E0073A0C0 /* Temple.swift */,
 				C6D3FB361F96FD1E0066A822 /* TempleList.swift */,
+				C67A565D1F9D57A000597871 /* Scoreboard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				C6C158251F93F12E0073A0C0 /* Temple.swift in Sources */,
 				C667FF8E1F97E9600044C9D5 /* TempleCardCell.swift in Sources */,
 				C667FF901F97F6140044C9D5 /* UIImage+scaling.swift in Sources */,
+				C67A565E1F9D57A000597871 /* Scoreboard.swift in Sources */,
 				C667FF861F97A0860044C9D5 /* TempleCardView.swift in Sources */,
 				C61A56721F9ACF4B0094B3E7 /* TempleFlashcardsTableViewDataSource.swift in Sources */,
 				C6D3FB331F96F5C40066A822 /* UIColor+rgb.swift in Sources */,
