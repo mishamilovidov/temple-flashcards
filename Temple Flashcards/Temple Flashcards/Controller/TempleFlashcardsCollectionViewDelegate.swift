@@ -16,34 +16,21 @@ extension TempleFlashcardsViewController : UICollectionViewDelegate {
         cardCellTempleSelected = temple
         cardSelected = true
         cardSelectedIndex = indexPath
-        
-        let correctAlert = UIAlertController(
-            title: "Correct!",
-            message: "That's the \(temple) Temple",
-            preferredStyle: .alert)
-        let incorrectAlert = UIAlertController(
-            title: "Not Quite!",
-            message: "That's he \(temple) Temple, not the  " + tableCellTempleSelected! + " Temple",
-            preferredStyle: .alert)
-        let defaultAction = UIAlertAction(
-            title: "Continue",
-            style: .default,
-            handler: {action in self.removeTemple(
-                            collection: self.templeCollectionView,
-                            table: self.templeTableView,
-                            templeListIndex: self.cellSelectedIndex!,
-                            randomOrderTempleListIndex: self.cardSelectedIndex!)})
+        let correctMessage = "Correct! That's the \(temple) Temple."
+        let incorrectMessage = "Not Quite! That's a photo of the " + cardCellTempleSelected! + " Temple."
         
         if (cardSelected == true && cellSelected == true) {
             
             if (temple == tableCellTempleSelected) {
                 Scoreboard.sharedInstance.addCorrect()
-                correctAlert.addAction(defaultAction)
-                present(correctAlert, animated: true, completion: nil)
+                self.showToast(message: correctMessage)
+                removeTemple(collection: self.templeCollectionView,
+                             table: self.templeTableView,
+                             templeListIndex: self.cellSelectedIndex!,
+                             randomOrderTempleListIndex: self.cardSelectedIndex!)
             } else {
                 Scoreboard.sharedInstance.addIncorrect()
-                incorrectAlert.addAction(defaultAction)
-                present(incorrectAlert, animated: true, completion: nil)
+                self.showToast(message: incorrectMessage)
             }
             
             updateTallies()

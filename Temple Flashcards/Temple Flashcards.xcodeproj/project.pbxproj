@@ -18,6 +18,7 @@
 		C667FF8E1F97E9600044C9D5 /* TempleCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667FF8D1F97E9600044C9D5 /* TempleCardCell.swift */; };
 		C667FF901F97F6140044C9D5 /* UIImage+scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667FF8F1F97F6140044C9D5 /* UIImage+scaling.swift */; };
 		C67A565E1F9D57A000597871 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A565D1F9D57A000597871 /* Scoreboard.swift */; };
+		C67A56621F9E760C00597871 /* UIViewController+toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67A56611F9E760B00597871 /* UIViewController+toast.swift */; };
 		C6C158251F93F12E0073A0C0 /* Temple.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C158241F93F12E0073A0C0 /* Temple.swift */; };
 		C6D3FB331F96F5C40066A822 /* UIColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FB321F96F5C40066A822 /* UIColor+rgb.swift */; };
 		C6D3FB351F96F92F0066A822 /* TempleFlashcardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FB341F96F92F0066A822 /* TempleFlashcardsViewController.swift */; };
@@ -39,6 +40,7 @@
 		C667FF8D1F97E9600044C9D5 /* TempleCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleCardCell.swift; sourceTree = "<group>"; };
 		C667FF8F1F97F6140044C9D5 /* UIImage+scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+scaling.swift"; sourceTree = "<group>"; };
 		C67A565D1F9D57A000597871 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
+		C67A56611F9E760B00597871 /* UIViewController+toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+toast.swift"; sourceTree = "<group>"; };
 		C6C158241F93F12E0073A0C0 /* Temple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temple.swift; sourceTree = "<group>"; };
 		C6D3FB321F96F5C40066A822 /* UIColor+rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgb.swift"; sourceTree = "<group>"; };
 		C6D3FB341F96F92F0066A822 /* TempleFlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleFlashcardsViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				C61A56711F9ACF4B0094B3E7 /* TempleFlashcardsTableViewDataSource.swift */,
 				C61A56731F9ACF6F0094B3E7 /* TempleFlashcardsTableViewDelegate.swift */,
 				C61A567C1F9AD4AA0094B3E7 /* MutableCollection+shuffle.swift */,
+				C67A56611F9E760B00597871 /* UIViewController+toast.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				C667FF8C1F97E83C0044C9D5 /* TempleCardViewController.swift in Sources */,
 				C6D3FB371F96FD1E0066A822 /* TempleList.swift in Sources */,
 				C6D3FB351F96F92F0066A822 /* TempleFlashcardsViewController.swift in Sources */,
+				C67A56621F9E760C00597871 /* UIViewController+toast.swift in Sources */,
 				C61A56741F9ACF6F0094B3E7 /* TempleFlashcardsTableViewDelegate.swift in Sources */,
 				C6D6A7C41F93EE2300D8FF93 /* AppDelegate.swift in Sources */,
 				C61A56761F9ACFAE0094B3E7 /* TempleFlashcardsCollectionViewDataSource.swift in Sources */,

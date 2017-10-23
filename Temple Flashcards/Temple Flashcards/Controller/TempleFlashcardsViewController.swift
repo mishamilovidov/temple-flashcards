@@ -43,6 +43,8 @@ class TempleFlashcardsViewController : UIViewController {
     @IBOutlet weak var correctCount: UILabel!
     @IBOutlet weak var incorrectCount: UILabel!
     @IBOutlet weak var resetButton: UIBarButtonItem!
+    @IBOutlet weak var modeButton: UIBarButtonItem!
+    @IBOutlet weak var matchModeViews: UIView!
     
     // MARK: - Actions
     
@@ -54,6 +56,20 @@ class TempleFlashcardsViewController : UIViewController {
         
         templeCollectionView.reloadData()
         templeTableView.reloadData()
+    }
+    
+    @IBAction func changeMode(_ sender: Any) {
+        
+        let screenWidth = UIScreen.main.bounds.width
+        
+        UIView.animate(withDuration: 1.0,
+                       delay: 0.0,
+                       options: [.curveEaseInOut],
+                       animations: {
+                            self.matchModeViews.isHidden = true
+                            self.templeCollectionView.frame.size.width = 550
+                        },
+                       completion: nil)
     }
     
     // MARK: - View controller life cycle
