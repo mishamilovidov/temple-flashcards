@@ -42,6 +42,19 @@ class TempleFlashcardsViewController : UIViewController {
     @IBOutlet weak var templeTableView: UITableView!
     @IBOutlet weak var correctCount: UILabel!
     @IBOutlet weak var incorrectCount: UILabel!
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    
+    // MARK: - Actions
+    
+    @IBAction func resetFlashcards(_ sender: Any) {
+        TempleList.sharedInstance.resetTempleList()
+        Scoreboard.sharedInstance.resetScoreboard()
+        
+        viewDidLoad()
+        
+        templeCollectionView.reloadData()
+        templeTableView.reloadData()
+    }
     
     // MARK: - View controller life cycle
     

@@ -156,6 +156,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Temple Flashcards" id="Hb4-gI-hOl">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="oBx-ew-trN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="resetFlashcards:" destination="BYZ-38-t0r" id="u1a-GU-I0V"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Study Mode" id="HP2-Ig-5QI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -163,6 +169,7 @@
                     <connections>
                         <outlet property="correctCount" destination="IVG-Fr-QdT" id="zTc-l8-zgm"/>
                         <outlet property="incorrectCount" destination="OWH-My-nkQ" id="qKT-Fc-Xft"/>
+                        <outlet property="resetButton" destination="oBx-ew-trN" id="o4M-Od-9Jf"/>
                         <outlet property="templeCollectionView" destination="JJd-n3-4z2" id="JGS-JR-OGX"/>
                         <outlet property="templeTableView" destination="lBG-5B-qq2" id="ioQ-G9-4o2"/>
                     </connections>

@@ -69,7 +69,7 @@ class TempleList {
     
     private func update() {
         
-        for temple in temples {
+        for temple in temples.sorted(by: {$0.name < $1.name}) {
             templeList.append(temple)
         }
         
@@ -85,6 +85,12 @@ class TempleList {
     public func removeTemple(templeListIndex: Int, randomOrderTempleListIndex: Int) {
         templeList.remove(at: templeListIndex)
         randomOrderTempleList.remove(at: randomOrderTempleListIndex)
+    }
+    
+    public func resetTempleList() {
+        self.templeList.removeAll()
+        self.randomOrderTempleList.removeAll()
+        self.update()
     }
     
 }
