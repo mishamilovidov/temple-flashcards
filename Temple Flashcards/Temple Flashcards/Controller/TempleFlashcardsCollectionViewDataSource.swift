@@ -18,10 +18,8 @@ extension TempleFlashcardsViewController : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.TempleCardCellIdentifier, for: indexPath)
         
         if mode == Mode.study {
-            print("study")
             cell.isUserInteractionEnabled = false
         } else {
-            print("mode")
             cell.isUserInteractionEnabled = true
         }
         

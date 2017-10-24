@@ -39,6 +39,8 @@ class TempleFlashcardsViewController : UIViewController {
     
     // MARK: - Properties
     
+    var templeList = TempleList.sharedInstance.templeList
+    var queuedReload = false
     var cardCellTempleSelected : String?
     var tableCellTempleSelected : String?
     var cardSelected : Bool?
@@ -79,6 +81,21 @@ class TempleFlashcardsViewController : UIViewController {
             resetFlashcardGame()
             modeButton.title = Storyboard.MatchModeButtonTitle
             mode = Mode.study
+            
+            let showName = !templeList[0].showName
+            
+            for i in 0 ..< templeList.count {
+                if let templeCardCell = templeCollectionView.cellForItem(at: IndexPath(row: i, section: 0))
+                    as? TempleCardCell {
+                    if templeList[i].showName != showName {
+                        templeList[i].showName = showName
+                        displayName(inCell: templeCardCell, withReload: true)
+                    }
+                } else {
+                    templeList[i].showName = showName
+                }
+            }
+            
         } else {
             matchModeViewWidth.constant = matchModeViewsContainerWidth
             matchTallyViewHeight.constant = matchTallyViewsContainerWidth
@@ -86,6 +103,10 @@ class TempleFlashcardsViewController : UIViewController {
             resetButton.isEnabled = true
             modeButton.title = Storyboard.StudyModeButtonTitle
             mode = Mode.match
+            
+            for i in 0 ..< templeList.count {
+                templeList[i].showName = false
+            }
         }
         
         UIView.animate(withDuration: 1.0,
@@ -140,6 +161,27 @@ class TempleFlashcardsViewController : UIViewController {
             
             updateTallies()
         }
+    }
+    
+    private func displayName(inCell templeCardCell: TempleCardCell, withReload needsReload: Bool = false) {
+        UIView.transition(
+            with: templeCardCell.templeCardView,
+            duration: 0.5,
+            options: .curveEaseIn,
+            animations: {
+                templeCardCell.templeCardView.showName = !templeCardCell.templeCardView.showName
+                templeCardCell.templeCardView.setNeedsDisplay()
+        },
+            completion: {
+                [unowned self] (finished: Bool) -> () in
+                if !self.queuedReload {
+                    self.queuedReload = true
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1,
+                                                  execute: {
+                                                    self.templeCollectionView.reloadData()
+                    })
+                }
+        })
     }
     
     func removeTemple(collection: UICollectionView, table: UITableView, templeListIndex: IndexPath, randomOrderTempleListIndex: IndexPath) {

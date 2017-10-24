@@ -15,6 +15,7 @@ class Temple {
     
     var name = "Aba Nigeria"
     var photo : UIImage?
+    var showName = false
     
     // MARK: - Initialization
     
@@ -22,8 +23,9 @@ class Temple {
         // By default this builds a Temple Card
     }
     
-    init(name: String, photo: UIImage) {
+    init(name: String, photo: UIImage, showName: Bool) {
         self.name = name
         self.photo = photo
+        self.showName = showName
     }
 }
