@@ -17,6 +17,15 @@ extension TempleFlashcardsViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.TempleCardCellIdentifier, for: indexPath)
         
+        if mode == Mode.study {
+            cell.isUserInteractionEnabled = false
+        } else {
+            cell.isUserInteractionEnabled = true
+        }
+        
+        cell.layer.borderWidth = 2.0
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        
         let templeCard = TempleList.sharedInstance.randomOrderTempleList[indexPath.row]
         
         if let templeCardCell = cell as? TempleCardCell {

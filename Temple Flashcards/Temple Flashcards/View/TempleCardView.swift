@@ -14,12 +14,20 @@ class TempleCardView : UIView {
     // MARK: - Properties
     
     var templeCard = Temple()
+    var fontSize: CGFloat { return bounds.width * 0.08}
+    var fontName = "Palatino"
+    var backgroundAlpha: CGFloat { return 0.5 }
     
     // MARK: - Computed Properties
     
-    var centerImageMargin    : CGFloat { return bounds.width * 0.15 }
-    var cornerImageWidth     : CGFloat { return bounds.width * 0.18 }
-    var cornerRadius         : CGFloat { return bounds.width * 0.05 }
+    @IBInspectable var showName: Bool {
+        get {
+            return templeCard.showName
+        }
+        set {
+            templeCard.showName = newValue
+        }
+    }
     
     // MARK: - Initialization
  
@@ -46,11 +54,37 @@ class TempleCardView : UIView {
     // MARK: - Drawing
     
     override func draw(_ rect: CGRect) {
-        drawTempleCard()
+        if showName {
+            drawTempleCardWithName()
+        } else {
+            drawTempleCard()
+        }
     }
     
     private func drawTempleCard() {
         templeCard.photo?.scaled(to: bounds.size, scalingMode: .aspectFill).draw(in: bounds)
+    }
+    
+    private func drawTempleCardWithName() {
+        templeCard.photo?.scaled(to: bounds.size, scalingMode: .aspectFill).draw(in: bounds)
+        
+        guard let font = UIFont(name: fontName, size: fontSize) else {
+            return
+        }
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        
+        let nameText = NSAttributedString(string: templeCard.name, attributes: [
+            .font : font,
+            .foregroundColor : UIColor.white,
+            .backgroundColor : UIColor.black.withAlphaComponent(backgroundAlpha),
+            .paragraphStyle : paragraph
+            ])
+        var textBounds = CGRect.zero
+        
+        textBounds.size = CGSize(width:bounds.width, height: bounds.width / 6)
+        textBounds.origin = CGPoint(x: (bounds.width - textBounds.width) / 2, y: (bounds.height - textBounds.height))
+        nameText.draw(in: textBounds)
     }
     
 }
