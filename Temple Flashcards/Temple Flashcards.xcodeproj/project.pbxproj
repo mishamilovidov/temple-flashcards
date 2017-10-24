@@ -34,6 +34,7 @@
 		C61A56751F9ACFAE0094B3E7 /* TempleFlashcardsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleFlashcardsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		C61A56771F9AD0140094B3E7 /* TempleFlashcardsCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleFlashcardsCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		C61A567C1F9AD4AA0094B3E7 /* MutableCollection+shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MutableCollection+shuffle.swift"; sourceTree = "<group>"; };
+		C61D367F1F9EFFAD00821129 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C667FF811F979D450044C9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C667FF851F97A0860044C9D5 /* TempleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleCardView.swift; sourceTree = "<group>"; };
 		C667FF8B1F97E83C0044C9D5 /* TempleCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleCardViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 				C60C37D01F93EFE200885983 /* Controller */,
 				C60C37D11F93EFEE00885983 /* Supporting Files */,
 				C6D3FB391F9705E30066A822 /* Assets.xcassets */,
+				C61D367F1F9EFFAD00821129 /* README.md */,
 			);
 			path = "Temple Flashcards";
 			sourceTree = "<group>";
