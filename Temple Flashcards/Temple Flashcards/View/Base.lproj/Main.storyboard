@@ -183,8 +183,11 @@
                     <connections>
                         <outlet property="correctCount" destination="IVG-Fr-QdT" id="zTc-l8-zgm"/>
                         <outlet property="incorrectCount" destination="OWH-My-nkQ" id="qKT-Fc-Xft"/>
+                        <outlet property="matchModeViewWidth" destination="AR9-ei-7cO" id="KiX-aW-JOi"/>
                         <outlet property="matchModeViews" destination="YGL-V6-ptw" id="CqH-oT-m8c"/>
+                        <outlet property="matchTallyLabels" destination="F0t-WK-jYW" id="hBj-Ic-AAs"/>
                         <outlet property="matchTallyView" destination="saQ-AH-9bq" id="Vpt-Zm-NLH"/>
+                        <outlet property="matchTallyViewHeight" destination="rHi-Jr-QRt" id="KX5-4H-yoH"/>
                         <outlet property="modeButton" destination="HP2-Ig-5QI" id="oIR-Iy-Lr2"/>
                         <outlet property="resetButton" destination="oBx-ew-trN" id="o4M-Od-9Jf"/>
                         <outlet property="templeCollectionView" destination="JJd-n3-4z2" id="JGS-JR-OGX"/>

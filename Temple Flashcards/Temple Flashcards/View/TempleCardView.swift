@@ -15,12 +15,6 @@ class TempleCardView : UIView {
     
     var templeCard = Temple()
     
-    // MARK: - Computed Properties
-    
-    var centerImageMargin    : CGFloat { return bounds.width * 0.15 }
-    var cornerImageWidth     : CGFloat { return bounds.width * 0.18 }
-    var cornerRadius         : CGFloat { return bounds.width * 0.05 }
-    
     // MARK: - Initialization
  
     override init(frame: CGRect) {

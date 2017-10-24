@@ -28,10 +28,14 @@ class TempleFlashcardsViewController : UIViewController {
     public struct Storyboard {
         static let TempleCardCellIdentifier     = "TempleCardCell"
         static let TempleTableCellIdentifier    = "TempleCell"
+        static let MatchModeButtonTitle         = "Match Mode"
+        static let StudyModeButtonTitle         = "Study Mode"
+        static let PinkAccentColor              = UIColor.init(red: 234.0, green: 208.0, blue: 213.0, alpha: 1.0)
     }
     
-    var templeCardCellHeight : CGFloat { return 70 }
-    var matchModeViewsWidth  : CGFloat { return 242 }
+    var templeCardCellHeight            : CGFloat { return 80 }
+    var matchModeViewsContainerWidth    : CGFloat { return 242 }
+    var matchTallyViewsContainerWidth   : CGFloat { return 40 }
     
     // MARK: - Properties
     
@@ -53,6 +57,9 @@ class TempleFlashcardsViewController : UIViewController {
     @IBOutlet weak var modeButton: UIBarButtonItem!
     @IBOutlet weak var matchModeViews: UIView!
     @IBOutlet weak var matchTallyView: UIView!
+    @IBOutlet weak var matchModeViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var matchTallyViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var matchTallyLabels: UIStackView!
     
     // MARK: - Actions
     
@@ -62,39 +69,32 @@ class TempleFlashcardsViewController : UIViewController {
     
     @IBAction func changeMode(_ sender: Any) {
         
-        if mode == Mode.match {
-            let screenWidth = UIScreen.main.bounds.width
-            
+        templeCollectionView.layoutIfNeeded()
+        
+        if matchModeViewWidth.constant == matchModeViewsContainerWidth {
+            matchModeViewWidth.constant = 0
+            matchTallyViewHeight.constant = 0
+            matchTallyView.isHidden = true
             resetButton.isEnabled = false
             resetFlashcardGame()
-            UIView.animate(withDuration: 1.0,
-                           delay: 0.0,
-                           options: [.curveEaseInOut],
-                           animations: {
-                                self.matchModeViews.isHidden = true
-                                self.templeCollectionView.frame.size.width = screenWidth
-                            },
-                           completion: nil)
-            
-            modeButton.title = "Match Mode"
+            modeButton.title = Storyboard.MatchModeButtonTitle
             mode = Mode.study
         } else {
-            let screenWidth = UIScreen.main.bounds.width
-            
+            matchModeViewWidth.constant = matchModeViewsContainerWidth
+            matchTallyViewHeight.constant = matchTallyViewsContainerWidth
+            matchTallyView.isHidden = false
             resetButton.isEnabled = true
-            UIView.animate(withDuration: 1.0,
-                           delay: 0.0,
-                           options: [.curveEaseInOut],
-                           animations: {
-                                self.matchModeViews.frame.size.width = self.matchModeViewsWidth
-                                self.templeCollectionView.frame.size.width = (screenWidth - self.matchModeViewsWidth)
-                            },
-                           completion: { (finished: Bool) in
-                                self.matchModeViews.isHidden = false
-                            })
-            modeButton.title = "Study Mode"
+            modeButton.title = Storyboard.StudyModeButtonTitle
             mode = Mode.match
         }
+        
+        UIView.animate(withDuration: 1.0,
+                       delay: 0.0,
+                       options: [.curveEaseInOut],
+                       animations: {
+                            self.templeCollectionView.reloadData()
+                            self.view.layoutIfNeeded()},
+                       completion: nil)
         
     }
     
@@ -108,8 +108,9 @@ class TempleFlashcardsViewController : UIViewController {
         }
         
         let inset = UIEdgeInsetsMake(0, 0, 50, 0)
-        self.templeTableView.contentInset = inset
-        self.templeCollectionView.contentInset = inset
+        templeTableView.contentInset = inset
+        templeCollectionView.contentInset = inset
+        templeCollectionView.allowsMultipleSelection = false
         
         setDefaults()
         updateTallies()
@@ -161,6 +162,11 @@ class TempleFlashcardsViewController : UIViewController {
     }
     
     func resetFlashcardGame() {
+        let selectedItems = templeCollectionView.indexPathsForSelectedItems
+        for indexPath in selectedItems! {
+            templeCollectionView.deselectItem(at: indexPath, animated:true)
+        }
+        
         TempleList.sharedInstance.resetTempleList()
         Scoreboard.sharedInstance.resetScoreboard()
         
