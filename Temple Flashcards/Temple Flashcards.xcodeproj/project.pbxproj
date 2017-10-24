@@ -116,6 +116,7 @@
 			children = (
 				C6D6A7C21F93EE2300D8FF93 /* Temple Flashcards */,
 				C6D6A7C11F93EE2300D8FF93 /* Products */,
+				C61D367F1F9EFFAD00821129 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,7 +136,6 @@
 				C60C37D01F93EFE200885983 /* Controller */,
 				C60C37D11F93EFEE00885983 /* Supporting Files */,
 				C6D3FB391F9705E30066A822 /* Assets.xcassets */,
-				C61D367F1F9EFFAD00821129 /* README.md */,
 			);
 			path = "Temple Flashcards";
 			sourceTree = "<group>";
